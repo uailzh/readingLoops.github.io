@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reading Loops</title>
+  <link rel="stylesheet" type="text/css" href="about_us_design.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni:wght@400;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  </head>
+  <body>
+  
+  
+    <header>  
+    <nav>
+    <ul class="menu">
+        <li class="logo">
+    <a href="index.html">
+        <img src="logo.png" alt="Reading Loops Logo">
+    </a>
+</li>
+
+        <li class="item"><a href="index.html">Home</a></li>
+        
+        <li class="item has-submenu">
+            <a tabindex="0">New Releases</a>
+            <ul class="submenu">
+                <li class="subitem"><a href="#">Animated</a></li>
+                <li class="subitem"><a href="releases.html">Colored</a></li>
+                <li class="subitem"><a href="comics.html">Black & White</a></li>
+            </ul>
+            
+             <li class="item has-submenu">
+            <a tabindex="0">More Info</a>
+            
+             <ul class="submenu">
+        <li class="subitem"><a href="blog.html">Blog</a></li>
+       
+        <li class="subitem"><a href="about_us.html">About Us</a></li>
+        </ul>
+        
+        
+        <li class="item"><a href="https://www.instagram.com/notogier/" target="_blank">
+  		<i class="fab fa-instagram insta-icon"></i></a></li>
+  		<li class="item"><a href="mailto:vail.gahloz@gmail.com">
+  <i class="fas fa-envelope email-icon"></i>
+</a>
+<li>
+		
+        
+        <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+    </ul>
+</nav>
+</header>
+
+
+
+
+ <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+ <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>  
+
+<script>
+  
+AOS.init({
+      duration: 3000,
+      once: true,
+    });  
+    
+    
+const toggle = document.querySelector(".toggle");
+const menu = document.querySelector(".menu");
+const items = document.querySelectorAll(".item");
+
+/* Toggle mobile menu */
+function toggleMenu() {
+  if (menu.classList.contains("active")) {
+    menu.classList.remove("active");
+    toggle.querySelector("a").innerHTML = "<i class='fas fa-bars'></i>";
+  } else {
+    menu.classList.add("active");
+    toggle.querySelector("a").innerHTML = "<i class='fas fa-times'></i>";
+  }
+}
+
+/* Activate Submenu */
+function toggleItem() {
+  if (this.classList.contains("submenu-active")) {
+    this.classList.remove("submenu-active");
+  } else if (menu.querySelector(".submenu-active")) {
+    menu.querySelector(".submenu-active").classList.remove("submenu-active");
+    this.classList.add("submenu-active");
+  } else {
+    this.classList.add("submenu-active");
+  }
+}
+
+/* Close Submenu From Anywhere */
+function closeSubmenu(e) {
+  if (menu.querySelector(".submenu-active")) {
+    let isClickInside = menu
+      .querySelector(".submenu-active")
+      .contains(e.target);
+
+    if (!isClickInside && menu.querySelector(".submenu-active")) {
+      menu.querySelector(".submenu-active").classList.remove("submenu-active");
+    }
+  }
+}
+/* Event Listeners */
+toggle.addEventListener("click", toggleMenu, false);
+for (let item of items) {
+  if (item.querySelector(".submenu")) {
+    item.addEventListener("click", toggleItem, false);
+  }
+  item.addEventListener("keypress", toggleItem, false);
+}
+document.addEventListener("click", closeSubmenu, false);
+</script>
+  
+  
+  <main>
+    <section class="about-section" data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom">
+  <div class="about-content">
+    <h1>About Us</h1>
+    </div>
+    
+   
+</section>
+
+    
+    <div class="custom-class" data-aos="zoom-in-down" data-aos-duration="1500">
+  <div class="custom-image">
+    <img src="about_img/comics6.png" alt="Image Description">
+  </div>
+  <div class="custom-text">
+    <p>Roaring with creativity and resounding with the echoes of countless adventures, Reading Loops invites you to partake in a gallery of comics where every panel is a portal to wonder.
+      At Reading Loops, we believe in the power of storytelling and the magic of art. Our team of talented artists and writers work together to bring unique and engaging experiences to life through our comics.
+      </br></br><p>Lured by the siren call of storytelling, Reading Loops beckons you to a land of limitless imagination where our comics unfurl enchanting sagas and ignite your longing for more with every loop of the narrative. Explore our collection of comics and get ready to embark on unforgettable journeys.
+      </br></br>Whether you're a seasoned explorer of comic realms or taking your first steps into this captivating realm, Reading Loops promises an odyssey that will leave you spellbound and hungry for the next adventure. Join us in celebrating the symphony of art and storytelling, and let your imagination run wild amidst the pages of our comics.</p>
+  </div>
+</div>
+
+
+<h1 class="new_head">
+Get yourself ready to dive into the magic art World of Tabit!
+</h1>
+
+ <div class="card-container" data-aos="fade-left" data-aos-duration="1500" data-aos-once="true">
+        <div class="card">
+            <h2>Interested in the process?</h2>
+            <p>Watch a quick shorts & see how the magic turns into the reality. It is truly fascinating!</p>
+            <div class="video-container">
+                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="card">
+            <h2>Interested in Our community?</h2>
+            <p>Watch the interview with Tabit - our main artist. He is revealing the main secrets of his success.</p>
+            <div class="video-container">
+                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    
+    
+          <div class="team_mem" data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom">
+      <img src="about_img/tabit.png" style="width: 100%;">
+      </div>
+      
+            <div class="team_mem" data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom">
+      <img src="about_img/uail.png" style="width: 100%;">
+      </div>
+      
+  </main>
+
+  
+  
+  <footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h6>About</h6>
+        <p class="text-justify">Reading Loops is an Online Journal and Comics Platform for young and talented artist - Tabit Zhukenov</p>
+      </div>
+
+      <div class="col-md-4">
+        <h6>Categories</h6>
+        <ul class="footer-links">
+          <li><a href="releases.html">New Releases</a></li>
+          <li><a href="comics.html">Comics</a></li>
+          <li><a href="blog.html">Coming Soon</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <h6>Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="about_us.html">About Us</a></li>
+          <li><a href="mailto:vail.gahloz@gmail.com">Contact Us</a></li>
+          
+          <li><a href="about_us.html">Privacy Policy</a></li>
+         
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <p class="copyright-text">
+          Copyright &copy; 2024 All Rights Reserved by 
+          <a href="index.html">Reading Loops</a>.
+        </p>
+      </div>
+
+      <div class="col-md-4">
+        <ul class="social-icons">
+          <li><a class="facebook" href="https://www.linkedin.com/in/uail-zh/"><i class="fab fa-facebook"></i></a></li>
+          <li><a class="twitter" href="https://www.linkedin.com/in/uail-zh/"><i class="fab fa-twitter"></i></a></li>
+          <li><a class="dribbble" href="https://www.linkedin.com/in/uail-zh/"><i class="fab fa-dribbble"></i></a></li>
+          <li><a class="linkedin" href="https://www.linkedin.com/in/uail-zh/"><i class="fab fa-linkedin"></i></a></li>   
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>

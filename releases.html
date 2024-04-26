@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reading Loops</title>
+  <link rel="stylesheet" type="text/css" href="releases.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni:wght@400;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  </head>
+  <body>
+  
+  
+    <header>  
+    <nav>
+    <ul class="menu">
+        <li class="logo">
+    <a href="index.html">
+        <img src="logo.png" alt="Reading Loops Logo">
+    </a>
+</li>
+
+        <li class="item"><a href="index.html">Home</a></li>
+        
+        <li class="item has-submenu">
+            <a tabindex="0">New Releases</a>
+            <ul class="submenu">
+                <li class="subitem"><a href="index.html">Animated</a></li>
+                <li class="subitem"><a href="releases.html">Colored</a></li>
+                <li class="subitem"><a href="comics.html">Black & White</a></li>
+            </ul>
+            
+             <li class="item has-submenu">
+            <a tabindex="0">More Info</a>
+            
+             <ul class="submenu">
+        <li class="subitem"><a href="blog.html">Blog</a></li>
+       
+        <li class="subitem"><a href="about_us.html">About Us</a></li>
+        </ul>
+        
+        
+        <li class="item"><a href="https://www.instagram.com/notogier/" target="_blank">
+  		<i class="fab fa-instagram insta-icon"></i></a></li>
+  		<li class="item"><a href="mailto:vail.gahloz@gmail.com">
+  <i class="fas fa-envelope email-icon"></i>
+</a>
+<li>
+		
+        
+        <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+    </ul>
+</nav>
+</header>
+
+    
+    <script>
+const toggle = document.querySelector(".toggle");
+const menu = document.querySelector(".menu");
+const items = document.querySelectorAll(".item");
+
+/* Toggle mobile menu */
+function toggleMenu() {
+  if (menu.classList.contains("active")) {
+    menu.classList.remove("active");
+    toggle.querySelector("a").innerHTML = "<i class='fas fa-bars'></i>";
+  } else {
+    menu.classList.add("active");
+    toggle.querySelector("a").innerHTML = "<i class='fas fa-times'></i>";
+  }
+}
+
+/* Activate Submenu */
+function toggleItem() {
+  if (this.classList.contains("submenu-active")) {
+    this.classList.remove("submenu-active");
+  } else if (menu.querySelector(".submenu-active")) {
+    menu.querySelector(".submenu-active").classList.remove("submenu-active");
+    this.classList.add("submenu-active");
+  } else {
+    this.classList.add("submenu-active");
+  }
+}
+
+/* Close Submenu From Anywhere */
+function closeSubmenu(e) {
+  if (menu.querySelector(".submenu-active")) {
+    let isClickInside = menu
+      .querySelector(".submenu-active")
+      .contains(e.target);
+
+    if (!isClickInside && menu.querySelector(".submenu-active")) {
+      menu.querySelector(".submenu-active").classList.remove("submenu-active");
+    }
+  }
+}
+/* Event Listeners */
+toggle.addEventListener("click", toggleMenu, false);
+for (let item of items) {
+  if (item.querySelector(".submenu")) {
+    item.addEventListener("click", toggleItem, false);
+  }
+  item.addEventListener("keypress", toggleItem, false);
+}
+document.addEventListener("click", closeSubmenu, false);
+</script>
+  
+  
+  
+  <div class="new_gif" data-aos="fade-left" data-aos-duration="1500" data-aos-once="true">
+      <img src="releases_img/1.png" style="width: 100%;">
+      </div>
+      
+      <div class="new_gif" data-aos="zoom-in-down" data-aos-duration="1500">
+      <img src="releases_img/2.png" style="width: 100%;">
+      </div>
+
+<div class="new_gif" data-aos="zoom-in-down" data-aos-duration="1500">
+      <img src="releases_img/3.png" style="width: 100%;">
+      </div>
+
+
+  
+  
+    
+    <section class="image-section">
+  <h1 class="section-heading">The Paganism Style</h1>
+  <p class="section-description">A series of pictures devoted to the classical tradition of arts, old forms in a digital package</p>
+  
+  <div class="image-row">
+    <div class="image-container">
+      <img src="releases_img/devil1.jpg" alt="Image 1" class="image">
+      <p class="image-description"><strong>Devil Carousing</strong></p>
+    </div>
+    <div class="image-container">
+      <img src="releases_img/devil8.jpg" alt="Image 2" class="image">
+      <p class="image-description"><strong>Rubens</strong></p>
+    </div>
+    <div class="image-container">
+      <img src="releases_img/devil9.jpg" alt="Image 3" class="image">
+      <p class="image-description"><strong>Darkness</strong></p>
+    </div>
+    <div class="image-container">
+      <img src="releases_img/1.jpg" alt="Image 1" class="image" style="height:500px;">
+      <p class="image-description"><strong>Vermeer</strong></p>
+    </div>
+    <div class="image-container">
+      <img src="releases_img/devil7.jpg" alt="Image 2" class="image">
+      <p class="image-description"><strong>Hopes and Dreams</strong></p>
+    </div>
+    <div class="image-container">
+      <img src="releases_img/devil4.jpg" alt="Image 3" class="image">
+      <p class="image-description"><strong>Magic Clan</strong></p>
+    </div>
+  </div>
+  
+</section>
+    
+    
+    <hr class="section-separator">
+
+    
+   <div class="slideshow-container">
+    <p class="choose-color-text">Choose your own color</br>palette</p>
+    <div class="mySlides">
+        <img src="releases_img/devil1.jpg" alt="Image 1">
+    </div>
+    <div class="mySlides">
+        <img src="releases_img/devil2.jpg" alt="Image 2">
+    </div>
+    <div class="mySlides">
+        <img src="releases_img/devil3.jpg" alt="Image 3">
+    </div>
+    <div class="mySlides">
+        <img src="releases_img/devil.jpg" alt="Image 3">
+    </div>
+    <!-- Add more images as needed -->
+
+    <!-- Buttons to navigate through images -->
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+</div>
+
+    <hr class="section-separator">
+
+
+
+<div class="heading_new" style="text-align: center; margin-top: 5%;">
+<h1> Check out other paintings in this collection </h1>
+</div>
+
+<div class="image-slider-container">
+
+
+  <img class="slider-image" id="image1" src="" alt="">
+  <img class="slider-image" id="image2" src="" alt="">
+  <img class="slider-image" id="image3" src="" alt="">
+</div>
+<div class="slider-button-container">
+  <button class="slider-button" id="backward">Backward</button>
+  <button class="slider-button" id="forward">Forward</button>
+</div>
+
+ <hr class="section-separator">
+
+
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+ <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>  
+
+
+
+<script>
+
+
+	AOS.init({
+      duration: 3000,
+      once: true,
+    });  
+
+
+
+  const imageSets = [
+    [
+      'releases_img/2.jpg',
+      'releases_img/6.jpg',
+      'releases_img/devil6.jpg',
+    ],
+    [
+      'releases_img/4.jpg',
+      'releases_img/5.jpg',
+      'releases_img/3.jpg',
+    ],
+    // Add more sets of images as needed
+  ];
+
+  const sliderImages = document.querySelectorAll('.slider-image');
+  const forwardButton = document.getElementById('forward');
+  const backwardButton = document.getElementById('backward');
+
+  let currentSetIndex = 0;
+  let currentImageIndex = 0;
+
+  function updateImages() {
+    const currentSet = imageSets[currentSetIndex];
+    for (let i = 0; i < sliderImages.length; i++) {
+      const imageIndex = currentImageIndex + i;
+      if (imageIndex < currentSet.length) {
+        sliderImages[i].src = currentSet[imageIndex];
+      } else {
+        sliderImages[i].src = ''; // Empty source if no image in the set
+      }
+    }
+  }
+
+  function forward() {
+    const currentSet = imageSets[currentSetIndex];
+    if (currentImageIndex + 3 < currentSet.length) {
+      currentImageIndex += 3;
+    } else {
+      currentImageIndex = 0;
+      currentSetIndex = (currentSetIndex + 1) % imageSets.length; // Move to the next image set
+    }
+    updateImages();
+  }
+
+  function backward() {
+    const currentSet = imageSets[currentSetIndex];
+    if (currentImageIndex - 3 >= 0) {
+      currentImageIndex -= 3;
+    } else {
+      currentImageIndex = Math.max(currentSet.length - 3, 0);
+      currentSetIndex = (currentSetIndex - 1 + imageSets.length) % imageSets.length; // Move to the previous image set
+    }
+    updateImages();
+  }
+
+  forwardButton.addEventListener('click', forward);
+  backwardButton.addEventListener('click', backward);
+
+  // Initial images
+  updateImages();
+
+
+  
+/* The one image that is changing */
+let slideIndex = 1;
+
+function showSlides(n) {
+    const slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) {
+        slideIndex = 1;
+    }
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
+}
+
+function changeSlide(n) {
+    showSlides(slideIndex += n);
+}
+
+showSlides(slideIndex);
+
+
+</script>  
+  
+  
+  
+  
+ <footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h6>About</h6>
+        <p class="text-justify">Reading Loops is an Online Journal and Comics Platform for young and talented artist - Tabit Zhukenov</p>
+      </div>
+
+      <div class="col-md-4">
+        <h6>Categories</h6>
+        <ul class="footer-links">
+          <li><a href="releases.html">New Releases</a></li>
+          <li><a href="comics.html">Comics</a></li>
+          <li><a href="blog.html">Coming Soon</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <h6>Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="about_us.html">About Us</a></li>
+          <li><a href="mailto:vail.gahloz@gmail.com">Contact Us</a></li>
+          
+          <li><a href="about_us.html">Privacy Policy</a></li>
+         
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <p class="copyright-text">
+          Copyright &copy; 2024 All Rights Reserved by 
+          <a href="index.html">Reading Loops</a>.
+        </p>
+      </div>
+
+      <div class="col-md-4">
+        <ul class="social-icons">
+          <li><a class="facebook" href="https://www.linkedin.com/in/uail-zh/"><i class="fab fa-facebook"></i></a></li>
+          <li><a class="twitter" href="https://www.linkedin.com/in/uail-zh/"><i class="fab fa-twitter"></i></a></li>
+          <li><a class="dribbble" href="https://www.linkedin.com/in/uail-zh/"><i class="fab fa-dribbble"></i></a></li>
+          <li><a class="linkedin" href="https://www.linkedin.com/in/uail-zh/"><i class="fab fa-linkedin"></i></a></li>   
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body>
+</html>

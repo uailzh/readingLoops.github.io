@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reading Loops</title>
+  <link rel="stylesheet" type="text/css" href="blog.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni:wght@400;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  </head>
+  <body>
+  
+  
+    <header>  
+    <nav>
+    <ul class="menu">
+        <li class="logo">
+    <a href="index.html">
+        <img src="logo.png" alt="Reading Loops Logo">
+    </a>
+</li>
+
+        <li class="item"><a href="index.html">Home</a></li>
+        
+        <li class="item has-submenu">
+            <a tabindex="0">New Releases</a>
+            <ul class="submenu">
+                <li class="subitem"><a href="#">Animated</a></li>
+                <li class="subitem"><a href="releases.html">Colored</a></li>
+                <li class="subitem"><a href="comics.html">Black & White</a></li>
+            </ul>
+            
+             <li class="item has-submenu">
+            <a tabindex="0">More Info</a>
+            
+             <ul class="submenu">
+        <li class="subitem"><a href="blog.html">Blog</a></li>
+       
+        <li class="subitem"><a href="about_us.html">About Us</a></li>
+        </ul>
+        
+        
+        <li class="item"><a href="https://www.instagram.com/notogier/" target="_blank">
+  		<i class="fab fa-instagram insta-icon"></i></a></li>
+  		<li class="item"><a href="mailto:vail.gahloz@gmail.com">
+  <i class="fas fa-envelope email-icon"></i>
+</a>
+<li>
+		
+        
+        <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+    </ul>
+</nav>
+</header>
+
+
+
+ <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+ <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>  
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+AOS.init({
+      duration: 3000,
+      once: true,
+    });  
+    
+const toggle = document.querySelector(".toggle");
+const menu = document.querySelector(".menu");
+const items = document.querySelectorAll(".item");
+
+/* Toggle mobile menu */
+function toggleMenu() {
+  if (menu.classList.contains("active")) {
+    menu.classList.remove("active");
+    toggle.querySelector("a").innerHTML = "<i class='fas fa-bars'></i>";
+  } else {
+    menu.classList.add("active");
+    toggle.querySelector("a").innerHTML = "<i class='fas fa-times'></i>";
+  }
+}
+
+
+/* Activate Submenu */
+function toggleItem() {
+  if (this.classList.contains("submenu-active")) {
+    this.classList.remove("submenu-active");
+  } else if (menu.querySelector(".submenu-active")) {
+    menu.querySelector(".submenu-active").classList.remove("submenu-active");
+    this.classList.add("submenu-active");
+  } else {
+    this.classList.add("submenu-active");
+  }
+}
+
+/* Close Submenu From Anywhere */
+function closeSubmenu(e) {
+  if (menu.querySelector(".submenu-active")) {
+    let isClickInside = menu
+      .querySelector(".submenu-active")
+      .contains(e.target);
+
+    if (!isClickInside && menu.querySelector(".submenu-active")) {
+      menu.querySelector(".submenu-active").classList.remove("submenu-active");
+    }
+  }
+}
+/* Event Listeners */
+toggle.addEventListener("click", toggleMenu, false);
+for (let item of items) {
+  if (item.querySelector(".submenu")) {
+    item.addEventListener("click", toggleItem, false);
+  }
+  item.addEventListener("keypress", toggleItem, false);
+}
+document.addEventListener("click", closeSubmenu, false);
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const ctaButton = document.querySelector('.cta-button');
+    const blogPostsSection = document.querySelector('.blog-posts');
+
+    // Scroll to the blog-posts section when cta-button is clicked
+    ctaButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        blogPostsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+});
+
+</script>
+
+
+
+
+
+
+<div class="tempi">
+
+
+<section class="hero" data-aos="fade-down"
+     data-aos-anchor-placement="center-bottom">
+    <div class="overlay"></div>
+    <div class="content">
+        <h2>Welcome to Our Blog</h2>
+        <p>Let others explore your digital art by sharing your creativity with us!</p>
+        <button class="cta-button">Discover More</button>
+    </div>
+</section>
+
+
+    <section class="featured-art" data-aos="fade-left" data-aos-duration="1500" data-aos-once="true">
+       
+        <div class="art-grid">
+            <div class="art-piece">
+                <img src="blog/bird.jpg" alt="Art Piece 1">
+                <h3>Strangy Bird</h3>
+                <p>Do you think this is your style of art?</p>
+            </div>
+            <div class="art-piece">
+                <img src="blog/main.jpeg" alt="Art Piece 2">
+                <h3>Jack Horse</h3>
+                <p>Are you capable of drawing something unique?</p>
+            </div>
+            <!-- Add more art pieces to the grid -->
+        </div>
+    </section>
+    
+     <hr class="section-sep">
+
+
+   <section class="blog-posts" data-aos="fade-down"
+     data-aos-anchor-placement="center-bottom">
+    <article class="post">
+        <h2>Exploring New Horizons</h2>
+        <div class="post-content">
+            <img src="blog/hornman.jpg" alt="Comic Strip 1">
+            <p>Join our artist community. Feel free to contact our team via email or Instagram. We would love to see you as a part of our team!</p>
+        </div>
+    </article>
+    <!-- Add more blog posts as needed -->
+
+    <!-- Connect button -->
+    <button id="conn-button">
+    <a href="mailto:vail.gahloz@gmail.com">Connect</a>
+</button>
+
+</section>
+</div>
+
+
+
+ <footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h6>About</h6>
+        <p class="text-justify">Reading Loops is an Online Journal and Comics Platform for young and talented artist - Tabit Zhukenov</p>
+      </div>
+
+      <div class="col-md-4">
+        <h6>Categories</h6>
+        <ul class="footer-links">
+          <li><a href="releases.html">New Releases</a></li>
+          <li><a href="comics.html">Comics</a></li>
+          <li><a href="blog.html">Coming Soon</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <h6>Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="about_us.html">About Us</a></li>
+          <li><a href="mailto:vail.gahloz@gmail.com">Contact Us</a></li>
+          
+          <li><a href="about_us.html">Privacy Policy</a></li>
+         
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <p class="copyright-text">
+          Copyright &copy; 2024 All Rights Reserved by 
+          <a href="index.html">Reading Loops</a>.
+        </p>
+      </div>
+
+      <div class="col-md-4">
+        <ul class="social-icons">
+          <li><a class="facebook" href="https://www.linkedin.com/in/uail-zh/"><i class="fab fa-facebook"></i></a></li>
+          <li><a class="twitter" href="https://www.linkedin.com/in/uail-zh/"><i class="fab fa-twitter"></i></a></li>
+          <li><a class="dribbble" href="https://www.linkedin.com/in/uail-zh/"><i class="fab fa-dribbble"></i></a></li>
+          <li><a class="linkedin" href="https://www.linkedin.com/in/uail-zh/"><i class="fab fa-linkedin"></i></a></li>   
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
